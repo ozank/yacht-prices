@@ -30,5 +30,5 @@ qplot(data=plot_data,x=year,y=price,geom="jitter")+ stat_smooth(method="loess")
 
 qplot(data=plot_data, x=year, y=price, colour=as.character(length)) + geom_line() + geom_errorbar(aes(ymin = price- 10000, ymax = price + 10000))
 
-qplot(year,price,data=plot_data) +scale_x_reverse() + stat_smooth(aes(group=1))
+qplot(year,price,data=plot_data, main="Bavaria 32ft") +scale_x_reverse() + xlab("Model")+ylab("Fiyat (Euro)")+ stat_smooth(level=0.9,size=1)+ylim(0,9e4) 
 + geom_boxplot() + stat_smooth(aes(group=1))
