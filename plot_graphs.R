@@ -4,9 +4,9 @@ scatterplot3d(length,year,price, main="3D Scatterplot")
 
 library(ggplot2)
 
-table<-dufour
+table<-bavaria
 #with(subset(table,length==38), plot(2013-year,price))
-plot_data<-subset(table,length==39)
+plot_data<-subset(table,length>=34 & length<=35 & year >1990 & year <=2010)
 plot(price~year, plot_data)
 
 
@@ -30,5 +30,5 @@ qplot(data=plot_data,x=year,y=price,geom="jitter")+ stat_smooth(method="loess")
 
 qplot(data=plot_data, x=year, y=price, colour=as.character(length)) + geom_line() + geom_errorbar(aes(ymin = price- 10000, ymax = price + 10000))
 
-qplot(year,price,data=plot_data, main="Bavaria 32ft") +scale_x_reverse() + xlab("Model")+ylab("Fiyat (Euro)")+ stat_smooth(level=0.9,size=1)+ylim(0,9e4) 
+qplot(year,price,data=plot_data, main="Bavaria 34") +scale_x_reverse() + xlab("Model")+ylab("Fiyat (Euro)")+ stat_smooth(level=0.95,size=1)+ylim(0,10e4) 
 + geom_boxplot() + stat_smooth(aes(group=1))
