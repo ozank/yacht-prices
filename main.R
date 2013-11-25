@@ -24,7 +24,7 @@ webpage<-Get_page(keyword="elan")
 table_dene<-Read_table(webpage)
 elan<-table_dene
 elan["make"]<-"elan"
-elan<-subset(elan, price<1e6)
+elan<-subset(elan, price<4e5)
 
 webpage<-Get_page(keyword="hanse")
 table_dene<-Read_table(webpage)
