@@ -15,8 +15,10 @@ shinyUI(pageWithSidebar(
                          "Hanse" = "hanse",
                          "Jeanneau" = "jeanneau"), selected=c("Bavaria")),
     # Simple integer interval
-    sliderInput("length", "Length (feet):", 
-                min=30, max=50, value=c(34,37))
+    sliderInput("length", "Length Range (feet):", 
+                min=30, max=50, value=c(34,37)),
+    sliderInput("year", "Year Range:", 
+                min=1980, max=2014, value=c(1990,2014))
     ),
   
   

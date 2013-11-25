@@ -12,8 +12,10 @@ shinyServer(function(input, output) {
   brands<-reactive({input$brands})
   modelminlength<-reactive({min(input$length)})
   modelmaxlength<-reactive({max(input$length)})
+  modelminyear<-reactive({min(input$year)})
+  modelmaxyear<-reactive({max(input$year)})
   
-  subset_data<-reactive({subset(yachts,(make %in% brands()) & length>=modelminlength() & length<=modelmaxlength())})
+  subset_data<-reactive({subset(yachts,(make %in% brands()) & length>=modelminlength() & length<=modelmaxlength() & year<=modelmaxyear() & year>=modelminyear())})
   
  # formulaText <- reactive({
   #  paste("Model: ", input$make)
