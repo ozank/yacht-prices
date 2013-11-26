@@ -20,17 +20,14 @@ shinyUI(pageWithSidebar(
     sliderInput("year", "Year Range:", 
                 min=1980, max=2014, value=c(1990,2014),format="####")
     ),
-  
-  
+    
   # Show the caption and plot of the requested variable against mpg
   mainPanel(
     
     tabsetPanel(
       tabPanel("Plot", h3(textOutput("caption")),plotOutput("yachtplot")), 
       tabPanel("Table", dataTableOutput("table"))
-    )
-    
-    
+    )  
   )
   
 ))
